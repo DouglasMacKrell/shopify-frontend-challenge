@@ -68,7 +68,7 @@ If you're unsure if you have Node installed, you can check for Node dependencies
 
 1. Clone this repo into a folder of your choice:
     ```
-    git clone https://github.com/DouglasMacKrell/foursquare-app.git
+    git clone https://github.com/DouglasMacKrell/shopify-frontend-challenge.git
     ```
 
 2. Install dependencies for the Node/Express Server and React App:
