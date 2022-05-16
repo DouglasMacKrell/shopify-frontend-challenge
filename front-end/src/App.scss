@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* base styles */
+* {
+  margin: 0;
+  font-family: "Quicksand";
+  color: #333;
+}
+
+body {
+  background: aqua;
+}
+
+// .main-container {
+//   width: 100vw;
+//   height: auto;
+//   background-color: aqua;
+//   background-attachment: fixed;
+// }
+
+.create {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+
+  &__header {
+    padding-top: 50px;
+  }
+
+  &__history {
+    padding-bottom: 40px;
+  }
+}
+
+.create label {
+  text-align: left;
+  display: block;
+}
+
+.create h2 {
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 30px;
+}
+
+.create input,
+.create textarea,
+.create select {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+
+.create textarea {
+  height: 200px;
+}
+
+.create button {
+  background: #f1356d;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  float: right;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
