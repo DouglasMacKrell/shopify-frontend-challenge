@@ -2,11 +2,11 @@
 
 ## Live @ [dougs-fun-with-ai.herokuapp.com](https://dougs-fun-with-ai.herokuapp.com)
 
-[![Behold Burrito Social Media](./frontend/public/Dougs-Fun-With-AI-Social.jpg)](https://beholdburrito.herokuapp.com/)
+[![Behold Burrito Social Media](./front-end/public/Dougs-Fun-With-AI-Social.jpg)](https://beholdburrito.herokuapp.com/)
 
 **Douglas MacKrell's Fun with AI** is a Full Stack Web App created to consume the OpenAI API and allow a user to quickly query a quirky AI and store their previous prompts in the browser!
 
-[![Behold Burrito Site Demo](./frontend/public/Dougs-Fun-With-AI-Demo.gif)](https://dougs-fun-with-ai.herokuapp.com/)
+[![Behold Burrito Site Demo](./front-end/public/Dougs-Fun-With-AI-Demo.gif)](https://dougs-fun-with-ai.herokuapp.com/)
 
 ## Features
 
