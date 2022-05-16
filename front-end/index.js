@@ -30,7 +30,6 @@ app.get("/api/engines", (req, res) => {
 })
 
 app.post("/api/prompt", (req, res) => {
-    console.log(req.body.engine)
     const body = {
       prompt: req.body.prompt,
       temperature: 0.5,

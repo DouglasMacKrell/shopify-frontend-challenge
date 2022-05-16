@@ -2,6 +2,7 @@ import './App.scss';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import ResponseCard from './components/response-card/ResponseCard';
+import LoadingView from './components/loadingView/LoadingView';
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
   const [engine, setEngine] = useState("text-curie-001");
   const [history, setHistory] = useState([]);
   const [engines, setEngines] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (sessionStorage.history) {
@@ -17,6 +19,7 @@ function App() {
     if (sessionStorage.engines) {
       setEngines(JSON.parse(sessionStorage.engines))
     }
+    setLoading(false)
   }, [])
 
   useEffect(() => {
@@ -34,6 +37,7 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoading(true)
     const userPrompt = { prompt: prompt, engine: engine };
     axios.post('http://localhost:3001/api/prompt', userPrompt)
       .then((response) => {
@@ -45,7 +49,7 @@ function App() {
           ),
         };
         const data = [currResponse, ...history];
-
+        setLoading(false)
         setHistory(data)
         sessionStorage.setItem("history", JSON.stringify(data));
       })
@@ -57,7 +61,7 @@ function App() {
   return (
     <div className='main-container'>
       <div className="create">
-      <h1 className='create__header'>Fun with AI</h1>
+      <h1 className='create__header'>Douglas MacKrell's Fun with AI</h1>
         <form onSubmit={handleSubmit}>
           <label>Enter prompt</label>
           <textarea
@@ -77,7 +81,8 @@ function App() {
           </select>
           <button>Submit</button>
         </form>
-        <h1 className='create__header'>Responses</h1>
+        <h2 className='create__header'>Responses</h2>
+        {loading && <LoadingView />}
         <ul className='create__history'>
           {history.length > 0 && history.map((reply) => {
             return (

@@ -11,13 +11,6 @@ body {
   background: aqua;
 }
 
-// .main-container {
-//   width: 100vw;
-//   height: auto;
-//   background-color: aqua;
-//   background-attachment: fixed;
-// }
-
 .create {
   max-width: 600px;
   margin: 0 auto;
@@ -25,6 +18,7 @@ body {
 
   &__header {
     padding-top: 50px;
+    padding-bottom: 10px;
   }
 
   &__history {
@@ -38,7 +32,6 @@ body {
 }
 
 .create h2 {
-  font-size: 20px;
   color: #f1356d;
   margin-bottom: 30px;
 }

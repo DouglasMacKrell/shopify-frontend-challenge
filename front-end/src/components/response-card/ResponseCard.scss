@@ -3,6 +3,7 @@
     padding: 10px;
     background-color: lightblue;
     border-radius: 10px;
+    transition: opacity 1s ease;
     
     &__container {
         display: grid;
