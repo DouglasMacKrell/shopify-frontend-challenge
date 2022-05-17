@@ -23,23 +23,22 @@ function App() {
   }, [])
 
   useEffect(() => {
-    axios.get('http://localhost:3001/api/engines')
+    axios
+      .get("https://dougs-fun-with-ai.herokuapp.com/api/engines")
       .then((response) => {
         const fetchedEngines = response.data.data.map((singleEngine) => {
-          return (
-            singleEngine.id
-          )
-        })
-        setEngines(fetchedEngines)
+          return singleEngine.id;
+        });
+        setEngines(fetchedEngines);
         sessionStorage.setItem("engines", JSON.stringify(fetchedEngines));
-      })
+      });
   }, [])
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true)
     const userPrompt = { prompt: prompt, engine: engine };
-    axios.post('http://localhost:3001/api/prompt', userPrompt)
+    axios.post('https://dougs-fun-with-ai.herokuapp.com/api/prompt', userPrompt)
       .then((response) => {
         const currResponse = {
           prompt: prompt,
