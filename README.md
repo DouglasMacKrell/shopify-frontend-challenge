@@ -15,7 +15,7 @@ Users are able to:
 * Provide a prompt for OpenAI to respond to
 * Select an available engine for (possibly) better text results
 * Submit a prompt
-* Receive a reply in the form of a ResponseCard that showcases their prompt and the given response
+* Receive a reply in the form of a ResponseCard that showcases both their prompt and the given response
 * Previous ResponseCards are saved locally in browser, and will not clear on refresh/reload
 
 This is accomplished by:
@@ -24,7 +24,8 @@ This is accomplished by:
 * Filling the select box with engine options based on a GET request made to the OpenAI API
   * This is facilitated through an Express.js back-end in the interest of keeping my sensitive API Key from being commited to GitHub or exposed in the build of my React App
     * The dotenv package allows the use of a hidden environmental variable
-  * The response is mapped over, and each engine id is saved as a string in an array which is saved to state
+    * Heroku allows deployments to store process.env data securely in Config Vars 
+  * The response is mapped over, and each engine id (the engine's name as a string) is saved in an array which is saved to state
   * This array of engine names is mapped over in my primary App function which creates options for the select box assigning the unique name as the value, key, and innerHTML of each
   * To save on unnecessary, costly, and slow GET requests to this mostly static data, the array of engine names is also saved to sessionStorage for quick retrieval by the browser
 * Using both the user generated prompt and the selected engine name to form the desired POST request to the OpenAI API
@@ -34,12 +35,13 @@ This is accomplished by:
    * This is also saved in sessionStorage upon update, and ensures that previous prompts/responses are saved within the browser and not lost upon refresh or accidental reload  
 * Using a reusable ResponseCard component, the history array is mapped over on update and creates individual ResponseCards for every prompt/response returned by the OpenAI API
 * A loading state is toggled between when POST requests are made to and returned from the OpenAI API 
-  * This temporarily reveals a circular loading spinner crafted in pure CSS3
+  * When in a loading state, the DOM temporarily reveals a circular loading spinner crafted in pure CSS3
 
 ## Future Features
 
 * Updated styling to fade-in each newly created ResponseCard for a better UX
 * Deeper unit testing to cover all aspects of the single page application
+* Expanded use of the API to include image results to prompts and UI tools to allow users to choose if they would prefer text, images, or both in their response from the AI
 
 ## Technical Milestones
 
@@ -47,8 +49,8 @@ This is accomplished by:
   * Dynamically revealing all current engines offered by the API via GET request
   * Dynamically requesting a text response based on the response to a POST request
   * Reading the OpenAI API [documentation](https://beta.openai.com/docs/introduction/overview) 
-* Implementing sessionStorage to save unnecessary API calls, and improve UX
-* Implementing unit testing of App.js and LoadingView.js component via Jest
+* Implementing sessionStorage to save unnecessary API calls, and improving UX through persisting state
+* Implementing unit testing of App.js and LoadingView.js components via Jest
 * Setting sensitive data safely within Heroku's Config Vars for deployment
 
 ## Technologies Used
