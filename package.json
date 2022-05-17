@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server/index.js",
-    "heroku-prebuild": "cd front-end && npm install && npm run build"
+    "start": "cd server && npm install && npm start",
+    "heroku-postbuild": "cd front-end && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {"node": "v17.2.0"}
 }

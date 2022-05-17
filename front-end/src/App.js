@@ -24,7 +24,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("https://dougs-fun-with-ai.herokuapp.com/api/engines")
+      .get("http://localhost:3001/api/engines")
       .then((response) => {
         const fetchedEngines = response.data.data.map((singleEngine) => {
           return singleEngine.id;
@@ -38,7 +38,7 @@ function App() {
     e.preventDefault();
     setLoading(true)
     const userPrompt = { prompt: prompt, engine: engine };
-    axios.post('https://dougs-fun-with-ai.herokuapp.com/api/prompt', userPrompt)
+    axios.post('http://localhost:3001/api/prompt', userPrompt)
       .then((response) => {
         const currResponse = {
           prompt: prompt,
