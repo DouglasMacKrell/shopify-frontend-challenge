@@ -47,8 +47,9 @@ This is accomplished by:
   * Dynamically revealing all current engines offered by the API via GET request
   * Dynamically requesting a text response based on the response to a POST request
   * Reading the OpenAI API [documentation](https://beta.openai.com/docs/introduction/overview) 
-* Running an Express.js back-end from within the front-end client-side folder
 * Implementing sessionStorage to save unnecessary API calls, and improve UX
+* Implementing unit testing of App.js and LoadingView via jest
+* Setting sensitive data within environmental variables in Heroku deployment
 
 ## Technologies Used
 
@@ -57,6 +58,7 @@ This is accomplished by:
 * **OpenAI API** To handle all data requests
 * **SCSS** For greater control and cleaner implementation of styling
 * **Heroku** For deployment
+* **Jest** For unit testing
 
 ## Local Setup
 
@@ -73,7 +75,7 @@ If you're unsure if you have Node installed, you can check for Node dependencies
 
 2. Install dependencies for the Node/Express Server and React App:
     ```
-    cd front-end && npm install
+    cd front-end && npm install && cd .. && cd server && npm install
     ```
 
 3. Before you can launch the Node/Express server, you must first create a free account with [OpenAI API](https://beta.openai.com/signup). Once you have created your account and verified your email, copy your API Key [from here](https://beta.openai.com/account/api-keys), and create an `.env` file in the root of the `front-end' folder. Inside this new file, add:
@@ -81,16 +83,16 @@ If you're unsure if you have Node installed, you can check for Node dependencies
     REACT_APP_OPENAI_SECRET=[paste your API key here]
     ```
 
-4. To launch the Node/Express server, inside the `front-end` folder run:
+4. To launch the Node/Express server, inside the `server` folder run:
     ```
-    npm run start:backend
+    npm start
     ```
 
 5. Before you can launch the React App, you must target your local server instead of my personal deployment within App.js. In the `front-end` => `src` folder, open the `App.js` file, and make the following updates:
 
-    - On line 26, change  
+    - On line 27, change  
         ```
-        `https://beholdburrito.herokuapp.com/api/engines`
+        `https://dougs-fun-with-ai.herokuapp.com/api/engines`
         ```
 
     - to  
@@ -100,7 +102,7 @@ If you're unsure if you have Node installed, you can check for Node dependencies
 
     - And on line 42, change  
         ```
-        `https://beholdburrito.herokuapp.com/api/prompt`
+        `https://dougs-fun-with-ai.herokuapp.com/api/prompt`
         ```
 
     - to  
@@ -111,7 +113,7 @@ If you're unsure if you have Node installed, you can check for Node dependencies
 
 6. To launch the React App, from a new terminal window within the `front-end` folder run:
     ```
-    npm run start:frontend
+    npm start
     ```
 
 7. A new browser tab should have been opened and the App should be running. If that is not the case check the terminals output for errors, if you are unable to troubleshoot the problem, I would be happy to address issues - so please open one [here!](/issues)
