@@ -54,7 +54,7 @@ app.post("/api/prompt", (req, res) => {
 });
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../front-end/build", "index.html"));
+  res.sendFile(path.join(__dirname, "../front-end/build/index.html"));
 });
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`))
