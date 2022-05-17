@@ -20,7 +20,7 @@ Users are able to:
 
 This is accomplished by:
 
-* Recursively updating and saving the value of the prompt box's textarea to state in order to capture the user's input
+* Updating and saving the value of the prompt box's textarea to state in order to capture the user's input
 * Filling the select box with engine options based on a GET request made to the OpenAI API
   * This is facilitated through an Express.js back-end in the interest of keeping my sensitive API Key from being commited to GitHub or exposed in the build of my React App
     * The dotenv package allows the use of a hidden environmental variable

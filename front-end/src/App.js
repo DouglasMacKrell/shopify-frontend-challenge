@@ -52,6 +52,7 @@ function App() {
         setLoading(false)
         setHistory(data)
         sessionStorage.setItem("history", JSON.stringify(data));
+        setPrompt('')
       })
       .catch((error) => {
         console.log(error)
@@ -59,38 +60,51 @@ function App() {
   }
 
   return (
-    <div className='main-container'>
+    <div className="main-container">
       <div className="create">
-      <h1 className='create__header'>Douglas MacKrell's Fun with AI</h1>
+        <h1 className="create__header">Douglas MacKrell's Fun with AI</h1>
         <form onSubmit={handleSubmit}>
           <label>Enter prompt</label>
           <textarea
             required
+            className='prompt-textarea'
             value={prompt}
+            data-testid="prompt-textarea"
             onChange={(e) => setPrompt(e.target.value)}
           ></textarea>
           <select
             value={engine}
+            className="engine-select"
+            data-testid="engine-select"
             onChange={(e) => setEngine(e.target.value)}
           >
-            {engines.length && engines.map((singleEngine) => {
-              return (
-                <option value={singleEngine} key={singleEngine}>{singleEngine}</option>
-              )
-            })}
+            {engines.length &&
+              engines.map((singleEngine) => {
+                return (
+                  <option value={singleEngine} key={singleEngine}>
+                    {singleEngine}
+                  </option>
+                );
+              })}
           </select>
-          <button>Submit</button>
+          <button className='submit-btn' data-testid='submit-btn'>
+            Submit
+          </button>
         </form>
-        <h2 className='create__header'>Responses</h2>
+        <h2 className="create__header">Responses</h2>
         {loading && <LoadingView />}
-        <ul className='create__history'>
-          {history.length > 0 && history.map((reply) => {
-            return (
-              <li key={reply.id}>
-                <ResponseCard response={reply.response} prompt={reply.prompt} />
-              </li>
-            )
-          })}
+        <ul className="create__history">
+          {history.length > 0 &&
+            history.map((reply) => {
+              return (
+                <li key={reply.id}>
+                  <ResponseCard
+                    response={reply.response}
+                    prompt={reply.prompt}
+                  />
+                </li>
+              );
+            })}
         </ul>
       </div>
     </div>
