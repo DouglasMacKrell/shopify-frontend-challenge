@@ -111,12 +111,12 @@ If you're unsure if you have Node installed, you can check for Node dependencies
         ```
 
 
-6. To launch the React App, from a new terminal window within the `front-end` folder run:
+6. To launch the React App, from a new terminal window starting at the `root` folder of the app run:
     ```
-    npm start
+    cd front-end && npm start
     ```
 
-7. A new browser tab should have been opened and the App should be running. If that is not the case check the terminals output for errors, if you are unable to troubleshoot the problem, I would be happy to address issues - so please open one [here!](/issues)
+7. A new browser tab should have been opened and the App should be running locally on your device. If that is not the case check the terminal's output for errors. If you are unable to troubleshoot the problem, I would be happy to address issues - so please open one [here!](/issues)
 
 
 ---
