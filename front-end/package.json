@@ -20,11 +20,12 @@
   "scripts": {
     "start:backend": "nodemon index.js",
     "start:frontend": "react-scripts start",
-    "start": "nodemon index.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "http://localhost:3001",
   "eslintConfig": {
     "extends": [
       "react-app",
