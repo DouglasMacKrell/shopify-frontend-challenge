@@ -24,7 +24,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/api/engines")
+      .get("https://dougs-fun-with-ai.herokuapp.com/api/engines")
       .then((response) => {
         const fetchedEngines = response.data.data.map((singleEngine) => {
           return singleEngine.id;
@@ -38,7 +38,8 @@ function App() {
     e.preventDefault();
     setLoading(true)
     const userPrompt = { prompt: prompt, engine: engine };
-    axios.post('http://localhost:3001/api/prompt', userPrompt)
+    axios
+      .post("https://dougs-fun-with-ai.herokuapp.com/api/prompt", userPrompt)
       .then((response) => {
         const currResponse = {
           prompt: prompt,
@@ -48,14 +49,14 @@ function App() {
           ),
         };
         const data = [currResponse, ...history];
-        setLoading(false)
-        setHistory(data)
+        setLoading(false);
+        setHistory(data);
         sessionStorage.setItem("history", JSON.stringify(data));
-        setPrompt('')
+        setPrompt("");
       })
       .catch((error) => {
-        console.log(error)
-      })
+        console.log(error);
+      });
   }
 
   return (
