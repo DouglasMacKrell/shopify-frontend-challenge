@@ -48,8 +48,8 @@ This is accomplished by:
   * Dynamically requesting a text response based on the response to a POST request
   * Reading the OpenAI API [documentation](https://beta.openai.com/docs/introduction/overview) 
 * Implementing sessionStorage to save unnecessary API calls, and improve UX
-* Implementing unit testing of App.js and LoadingView via jest
-* Setting sensitive data within environmental variables in Heroku deployment
+* Implementing unit testing of App.js and LoadingView.js component via Jest
+* Setting sensitive data safely within Heroku's Config Vars for deployment
 
 ## Technologies Used
 
