@@ -80,7 +80,7 @@ If you're unsure if you have Node installed, you can check for Node dependencies
     cd front-end && npm install && cd .. && cd server && npm install
     ```
 
-3. Before you can launch the Node/Express server, you must first create a free account with [OpenAI API](https://beta.openai.com/signup). Once you have created your account and verified your email, copy your API Key [from here](https://beta.openai.com/account/api-keys), and create an `.env` file in the root of the `front-end' folder. Inside this new file, add:
+3. Before you can launch the Node/Express server, you must first create a free account with [OpenAI API](https://beta.openai.com/signup). Once you have created your account and verified your email, copy your API Key [from here](https://beta.openai.com/account/api-keys), and create an `.env` file in the root folder. Inside this new file, add:
     ```
     REACT_APP_OPENAI_SECRET=[paste your API key here]
     ```
